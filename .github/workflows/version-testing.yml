@@ -3,8 +3,8 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    env:
-      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    # env:
+      # SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     steps:
       - name: Check out repository code with version 2
         uses: actions/checkout@v2
@@ -13,4 +13,4 @@ jobs:
       - name: Test out snyk
         uses: snyk/actions/python@master
         env:
-          SNYK_AUTH: ${{ secrets.SNYK_TOKEN }}
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
