@@ -9,4 +9,6 @@ jobs:
       - name: Check out repository code with version 1
         uses: actions/checkout@v1
       - name: Check out repository code with non existent version
-        uses: actions/checkout@v413
+        uses: snyk/actions/python@master
+        env:
+          SNYK_AUTH: ${{ secrets.SNYK_TOKEN }}
